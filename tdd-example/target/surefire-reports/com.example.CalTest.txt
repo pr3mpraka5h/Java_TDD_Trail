@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.CalTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in com.example.CalTest
+testAdd  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.IllegalArgumentException: Negative numbers not allowed: [-5, -7]
+	at com.example.CalTest.testAdd(CalTest.java:28)
+

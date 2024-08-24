@@ -1,11 +1,15 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cal 
 {
 
 	public int add(String numbers)
 	{
 		int total=0;
+		List<Integer> negativeNumbers = new ArrayList<>();
 		
         if (numbers.isEmpty()) {
             return 0;
@@ -26,13 +30,30 @@ public class Cal
 	        String[] numbersArray = numbers.split(delimiter);
 			
 			for (String number : numbersArray) {
-				 try {
-		                total += Integer.parseInt(number.trim());  // Parse integer and add to total
-		            } catch (NumberFormatException e) {
-		                System.out.println("Invalid number format: " + number);}
+				int parsedNumber;
+	            try {
+	                parsedNumber = Integer.parseInt(number.trim());  // Parse integer
+	            } catch (NumberFormatException e) {
+	                System.out.println("Invalid number format: " + number);
+	                continue;  // Skip invalid numbers
+	            }
+
+	            // Check if the number is negative
+	            if (parsedNumber < 0) {
+	                negativeNumbers.add(parsedNumber);
+	            } else {
+	                total += parsedNumber;
+	            }
+	        }
+
+	        // If there are any negative numbers, throw an exception
+	        if (!negativeNumbers.isEmpty()) {
+	        	System.out.println("Negative numbers not allowed: " + negativeNumbers);
+//	            throw new IllegalArgumentException("Negative numbers not allowed: " + negativeNumbers);
 	        }
 
 	        return total;
+	    }
 	}
 }
-}
+
