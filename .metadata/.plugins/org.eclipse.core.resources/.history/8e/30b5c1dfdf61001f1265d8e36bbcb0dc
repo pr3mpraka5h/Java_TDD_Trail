@@ -19,7 +19,7 @@ public class Cal
 			
 			for (int i = 0; i < numbers_String.length; i++) {
 				total = total+ Integer.parseInt(numbers_String[i]);
-			}
+			    
 			
 			
 		}

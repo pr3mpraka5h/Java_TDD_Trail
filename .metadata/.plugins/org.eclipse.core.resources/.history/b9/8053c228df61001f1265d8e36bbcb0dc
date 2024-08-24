@@ -9,8 +9,7 @@ public class CalTest
 	public void cal_add() 
 	{
 	Cal c=new Cal();
-	System.out.println("---");
-	System.out.println(c.add("1,5,78,88,0"));
+	c.add("1,5");
 	
 	}
 }

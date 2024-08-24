@@ -5,7 +5,6 @@ public class Cal
 
 	public int add(String numbers)
 	{
-		int total=0;
 		if(numbers.length()==0)
 		return 0;
 		
@@ -15,15 +14,14 @@ public class Cal
 		else
 		{
 			String[] numbers_String=numbers.split(",");
-//			int[] a1=new int[numbers_String.length];
+			int[] a1=new int[numbers_String.length];
 			
-			for (int i = 0; i < numbers_String.length; i++) {
-				total = total+ Integer.parseInt(numbers_String[i]);
-			}
+			for (int i = 0; i < numberStrings.length; i++) {
+			    a1[i] = Integer.parseInt(numberStrings[i]);
 			
 			
 		}
 		
-		return total;
+		return 0;
 	}
 }
