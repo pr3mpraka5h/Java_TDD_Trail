@@ -7,13 +7,14 @@ public class Cal
 	{
 		int total=0;
 		
-        if (numbers.isEmpty()) {
-            return 0;
-        }
+		if(numbers.length()==0)
+		return 0;
+		
+		else if(numbers.length()==1)
+		return Integer.parseInt(numbers);
 		
 		else
 		{
-			numbers = numbers.replace("\\n", "\n");
 			String delimiter = ",|\n"; 
 			
 	        if (numbers.startsWith("//")) {
@@ -26,10 +27,7 @@ public class Cal
 	        String[] numbersArray = numbers.split(delimiter);
 			
 			for (String number : numbersArray) {
-				 try {
-		                total += Integer.parseInt(number.trim());  // Parse integer and add to total
-		            } catch (NumberFormatException e) {
-		                System.out.println("Invalid number format: " + number);}
+	            total += Integer.parseInt(number);
 	        }
 
 	        return total;
